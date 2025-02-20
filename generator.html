@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Recipe Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <nav class="bg-gradient-to-r from-purple-500 to-pink-500 p-8 shadow-xl">
+      <div class="container mx-auto flex items-center justify-between">
+        <h1
+          class="text-white text-4xl font-extrabold tracking-wide drop-shadow-lg"
+        >
+          <a
+            href="home.html"
+            class="hover:text-gray-300 transition duration-300"
+            >AI Recipe Generator</a
+          >
+        </h1>
+        <a
+          href="index.html"
+          class="bg-purple-500 text-white px-4 py-2 rounded-full hover:bg-purple-600 transition duration-300 shadow"
+        >
+          Recipe Finder
+        </a>
+      </div>
+    </nav>
+    <main class="container mx-auto mt-12 px-4">
+      <form id="aiRecipeForm" class="flex flex-col items-center space-y-4">
+        <input
+          id="recipeInput"
+          type="text"
+          placeholder="Enter ingredients, cuisine, or style..."
+          class="w-full max-w-lg px-6 py-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-400 transition duration-300"
+        />
+        <button
+          type="submit"
+          class="bg-pink-500 text-white px-6 py-4 rounded-full hover:bg-pink-600 transition duration-300 shadow-lg"
+        >
+          Generate Recipe
+        </button>
+      </form>
+      <div class="mt-6 text-center">
+        <button
+          id="viewSavedRecipesBtn"
+          class="bg-indigo-500 text-white px-6 py-3 rounded-full hover:bg-indigo-600 transition duration-300 shadow-lg"
+        >
+          View Saved Recipes
+        </button>
+      </div>
+      <section id="generatedRecipe" class="mt-10"></section>
+    </main>
+    <footer
+      class="mt-12 text-center text-gray-500 text-sm py-6 border-t border-gray-200"
+    >
+      &copy; 2025 AI Recipe Generator.
+    </footer>
+    <script src="ai-recipe-generator.js"></script>
+  </body>
+</html>

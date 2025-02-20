@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <nav class="bg-gradient-to-r from-green-400 to-blue-500 p-8 shadow-xl">
+      <div class="container mx-auto flex items-center justify-between">
+        <h1
+          class="text-white text-4xl font-extrabold tracking-wide drop-shadow-lg"
+        >
+          <a
+            href="home.html"
+            class="hover:text-gray-300 transition duration-300"
+          >
+            Recifinder</a
+          >
+        </h1>
+        <a
+          href="generator.html"
+          class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300 shadow"
+        >
+          AI Recipe Generator
+        </a>
+      </div>
+    </nav>
+
+    <main class="container mx-auto mt-12 px-4">
+      <!-- Search and Favorites Section -->
+      <div class="flex flex-col items-center mb-10">
+        <div class="flex items-center space-x-4 w-full max-w-xl">
+          <input
+            id="ingredientInput"
+            type="text"
+            placeholder="Enter ingredients or meal type..."
+            class="w-full px-6 py-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+          />
+          <button
+            id="searchBtn"
+            class="bg-green-500 text-white px-6 py-4 rounded-full hover:bg-green-600 transition duration-300 shadow-lg"
+          >
+            Search
+          </button>
+        </div>
+        <!-- View Favorites Button -->
+        <button
+          id="viewFavoritesBtn"
+          class="bg-blue-500 text-white px-6 py-4 rounded-full hover:bg-blue-600 transition duration-300 mt-6 shadow-lg"
+        >
+          View Favorites
+        </button>
+      </div>
+      <!-- Results Container -->
+      <section
+        id="results"
+        class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      ></section>
+    </main>
+    <footer
+      class="mt-12 text-center text-gray-500 text-sm py-6 border-t border-gray-200"
+    >
+      &copy; 2025 Recifinder. Powered by Spoonacular API.
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
